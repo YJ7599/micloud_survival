@@ -67,7 +67,7 @@ COPY app/MiDataProc.Surv.Model3.Taxa.R /root/app
 COPY app/MiDataProc.Surv.Model4.R /root/app
 COPY app/www/MiSurv_workflow.png /root/app
 
-COPY app/shiny_1.7.2.tar.gz/root/app
+COPY app/shiny_1.7.2.tar.gz /root/app
 RUN R -e "install.packages('/root/app/shiny_1.7.2.tar.gz', repos=NULL, type = 'source')"
 
 
