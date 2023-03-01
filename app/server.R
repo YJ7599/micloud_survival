@@ -2874,10 +2874,6 @@ server = function(input, output, session) {
             )
           })
           
-          
-          outputOptions(output, "taxa_display_results_hmm", suspendWhenHidden = FALSE)
-    
-          
           output$box_1 = renderPlot({ 
             taxa.bin.boxplot(taxa_dataBinvar, taxa_dataTaxa, taxa.outputs$DAoutput, chooseData$taxa.names.out, 1, TRUE)  
           })
