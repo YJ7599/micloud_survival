@@ -28,8 +28,8 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # basic shiny functionality
-RUN R -e "install.packages(c('devtools'), repos='https://cloud.r-project.org/')"
-RUN R -e "devtools::install_version('shiny', version = '1.7.2', dependencies= T)"
+RUN R -e "install.packages('devtools', repos='https://cloud.r-project.org/')"
+#RUN R -e "devtools::install_version('shiny', version = '1.7.2', dependencies= T)"
 RUN R -e "install.packages(c('rmarkdown'), repos='https://cloud.r-project.org/')"
 
 # install dependencies of the MiCloud app
@@ -44,6 +44,7 @@ RUN R -e "remotes::install_github('joey711/biomformat')"
 
 RUN R -e "remotes::install_github('hk1785/GLMM-MiRKAT')"
 RUN R -e "remotes::install_github('nyiuab/NBZIMM')"
+RUN R -e "remotes::install_github('https://cran.rstudio.com//src/contrib/Archive/shiny/shiny_1.7.2.tar.gz')"
 RUN R -e "install.packages(c('gridGraphics', 'compositions'), repos = 'https://cloud.r-project.org/')"
 RUN R -e "install.packages(c('rgl', 'vegan3d', 'pca3d', 'jpeg', 'splitTools', 'survival', 'survminer', 'coin'), repos = 'https://cloud.r-project.org/')"
 RUN R -e "install.packages(c('randomForestSRC', 'kableExtra', 'caret', 'randomForest', 'glmnet'), repos = 'https://cloud.r-project.org/')"
