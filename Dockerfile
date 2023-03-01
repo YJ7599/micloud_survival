@@ -28,6 +28,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # basic shiny functionality
+RUN R -e "install.packages(c('devtools'), repos='https://cloud.r-project.org/')"
 RUN R -e "install_version('shiny', version = '1.7.2', dependencies= T)"
 RUN R -e "install.packages(c('rmarkdown'), repos='https://cloud.r-project.org/')"
 
@@ -36,7 +37,7 @@ RUN R -e "install.packages(c('seqinr', 'shinydashboard', 'proxy', 'dashboardthem
 RUN R -e "install.packages(c('DT', 'htmltools', 'phangorn', 'bios2mds', 'zip', 'zCompositions', 'dplyr', 'forestplot', 'quantreg', 'fossil', 'picante' ), repos='https://cloud.r-project.org/')"
 RUN R -e "install.packages(c('entropart', 'lme4', 'lmerTest', 'dirmult', 'robustbase', 'robCompositions', 'BiasedUrn'), repos='https://cloud.r-project.org/')"
 RUN R -e "install.packages(c('CompQuadForm', 'GUniFrac', 'ecodist', 'MiRKAT', 'gridExtra', 'ggplot2', 'patchwork', 'ggthemes', 'erer', 'DiagrammeR', 'stringr'), repos='https://cloud.r-project.org/')"
-RUN R -e "install.packages(c('devtools', 'betareg', 'remotes'), repos='https://cloud.r-project.org/')"
+RUN R -e "install.packages(c('betareg', 'remotes'), repos='https://cloud.r-project.org/')"
 
 RUN R -e "remotes::install_github('joey711/phyloseq')"
 RUN R -e "remotes::install_github('joey711/biomformat')"
