@@ -44,7 +44,7 @@ RUN R -e "remotes::install_github('joey711/biomformat')"
 
 RUN R -e "remotes::install_github('hk1785/GLMM-MiRKAT')"
 RUN R -e "remotes::install_github('nyiuab/NBZIMM')"
-RUN R -e "remotes::install_github('https://cran.rstudio.com//src/contrib/Archive/shiny/shiny_1.7.2.tar.gz')"
+#RUN R -e "remotes::install_github('https://cran.rstudio.com//src/contrib/Archive/shiny/shiny_1.7.2.tar.gz')"
 RUN R -e "install.packages(c('gridGraphics', 'compositions'), repos = 'https://cloud.r-project.org/')"
 RUN R -e "install.packages(c('rgl', 'vegan3d', 'pca3d', 'jpeg', 'splitTools', 'survival', 'survminer', 'coin'), repos = 'https://cloud.r-project.org/')"
 RUN R -e "install.packages(c('randomForestSRC', 'kableExtra', 'caret', 'randomForest', 'glmnet'), repos = 'https://cloud.r-project.org/')"
