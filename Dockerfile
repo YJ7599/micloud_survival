@@ -66,4 +66,4 @@ COPY app/www/MiSurv_workflow.png /root/app
 
 EXPOSE 3838
 
-CMD ["R", "-e", "shiny::runApp('/root/app/server.R')"]
+CMD ["R", "-e", "shiny::runApp('/root/app')"]
