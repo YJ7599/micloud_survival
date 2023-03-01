@@ -2752,6 +2752,10 @@ server = function(input, output, session) {
   ######################################
   observeEvent(input$balsa_tara,{
     
+    output$taxa_display_results_hmm <- renderUI({})
+    outputOptions(output, "taxa_display_results_hmm", suspendWhenHidden = FALSE)
+    
+    
     validate(
       if (input$covariates_taxa == "Covariate(s)" & is.null(input$covariatesOptions_taxa)) {
         showNotification("Error: Please select covariate(s) before you click 'Run!' button.",
