@@ -2847,10 +2847,9 @@ server = function(input, output, session) {
               height[r] <- 1
             } 
           }
+   
           
-          output$taxa_display_results_hmm <- renderUI({})
-          outputOptions(output, "taxa_display_results_hmm", suspendWhenHidden = FALSE)
-          
+          shinyjs::hide("taxa_display_results_hmm")
           shinyjs::show("taxa_display_results_hmm")
           
           output$taxa_display_results_hmm= renderUI({
