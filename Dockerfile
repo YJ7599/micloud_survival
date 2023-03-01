@@ -28,7 +28,8 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # basic shiny functionality
-RUN R -e "install.packages(c('shiny', 'rmarkdown'), repos='https://cloud.r-project.org/')"
+RUN R -e "install_version('shiny', version = "4.1.0", dependencies= T)"
+RUN R -e "install.packages(c('rmarkdown'), repos='https://cloud.r-project.org/')"
 
 # install dependencies of the MiCloud app
 RUN R -e "install.packages(c('seqinr', 'shinydashboard', 'proxy', 'dashboardthemes', 'tidyverse', 'plotly', 'shinyWidgets', 'shinyjs', 'googleVis', 'xtable'), repos='https://cloud.r-project.org/')"
