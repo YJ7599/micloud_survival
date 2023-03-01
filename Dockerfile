@@ -33,7 +33,7 @@ RUN R -e "install.packages('devtools', repos='https://cloud.r-project.org/')"
 RUN R -e "install.packages(c('rmarkdown'), repos='https://cloud.r-project.org/')"
 
 # install dependencies of the MiCloud app
-RUN R -e "install.packages(c('seqinr', 'shinydashboard', 'proxy', 'dashboardthemes', 'tidyverse', 'plotly', 'shinyWidgets', 'shinyjs', 'googleVis', 'xtable'), repos='https://cloud.r-project.org/')"
+RUN R -e "install.packages(c('shiny', 'seqinr', 'shinydashboard', 'proxy', 'dashboardthemes', 'tidyverse', 'plotly', 'shinyWidgets', 'shinyjs', 'googleVis', 'xtable'), repos='https://cloud.r-project.org/')"
 RUN R -e "install.packages(c('DT', 'htmltools', 'phangorn', 'bios2mds', 'zip', 'zCompositions', 'dplyr', 'forestplot', 'quantreg', 'fossil', 'picante' ), repos='https://cloud.r-project.org/')"
 RUN R -e "install.packages(c('entropart', 'lme4', 'lmerTest', 'dirmult', 'robustbase', 'robCompositions', 'BiasedUrn'), repos='https://cloud.r-project.org/')"
 RUN R -e "install.packages(c('CompQuadForm', 'GUniFrac', 'ecodist', 'MiRKAT', 'gridExtra', 'ggplot2', 'patchwork', 'ggthemes', 'erer', 'DiagrammeR', 'stringr'), repos='https://cloud.r-project.org/')"
@@ -68,7 +68,7 @@ COPY app/MiDataProc.Surv.Model4.R /root/app
 COPY app/www/MiSurv_workflow.png /root/app
 
 COPY app/shiny_1.7.2.tar.gz /root/app
-RUN R -e "install.packages('/root/app/shiny_1.7.2.tar.gz', repos=NULL, type = 'source')"
+#RUN R -e "install.packages('/root/app/shiny_1.7.2.tar.gz', repos=NULL, type = 'source')"
 
 
 EXPOSE 3838
