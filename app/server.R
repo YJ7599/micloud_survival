@@ -2852,6 +2852,8 @@ server = function(input, output, session) {
           shinyjs::hide("taxa_display_results_hmm")
           shinyjs::show("taxa_display_results_hmm")
           
+
+          
           output$taxa_display_results_hmm= renderUI({
             tagList(
               tabBox(title = strong("Box Plot", style = "color:black"), width = NULL,
@@ -2904,6 +2906,10 @@ server = function(input, output, session) {
             taxa.bin.boxplot(taxa_dataBinvar, taxa_dataTaxa, taxa.outputs$DAoutput, chooseData$taxa.names.out, 6, TRUE)  ####all.t.test.united should be used
           })
           
+          
+          output$taxa_display_reults_hmm = renderText({ 
+    "You have selected this"
+  })
           incProgress(3/10, message = "Displaying Results in progress")
           
           dend_result <- taxa.sig.dend(taxa.outputs$DAoutput, chooseData$NAadded$tax.tab, "twopi", include)
